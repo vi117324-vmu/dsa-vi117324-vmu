@@ -8,7 +8,7 @@ typedef struct SinhVien{
     float diem2;
     float diem3;
 }SinhVien;
-void nhapDanhSach(SinhVien *ds, int n){
+void nhapds(SinhVien *ds, int n){
 	for (int i = 0; i < n; i++){
 		SinhVien *sv = ds + i;
 		printf("Thong tin sinh vien thu %d\n", i + 1);
@@ -31,7 +31,7 @@ void nhapDanhSach(SinhVien *ds, int n){
         scanf("%f", &(sv->diem3));
 	}
 }
-void inDanhSach(const SinhVien *ds, int n) {
+void inds(const SinhVien *ds, int n) {
     printf("%-5s %-15s %-25s %-10s %-10s %-10s %-10s\n", "STT", "MSV", "Ho ten", "Diem 1", "Diem 2", "Diem 3", "Diem TB");
     for (int i = 0; i < n; i++) {
         const SinhVien *sv = ds + i;
@@ -58,8 +58,8 @@ int main() {
         printf("Khong du bo nho!\n");
         return 1;
     }
-    nhapDanhSach(ds, n);
-    inDanhSach(ds, n);
+    nhapds(ds, n);
+    inds(ds, n);
 
     free(ds);
     ds = NULL;
